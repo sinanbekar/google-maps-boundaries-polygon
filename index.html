@@ -1,13 +1,47 @@
 <!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+
+ Modified by Sinan Bekar <sinanbekar.work@gmail.com>
+-->
+
 <html>
   <head>
-    <title>Google Maps Boundaries Polygon</title>
+    <title>Boundaries Polygon</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script type="module" src="./index.ts"></script>
   </head>
   <body>
-    Google Maps Boundaries Polygon
+    <div id="container">
+      <div id="sidebar">
+        <div id="title">Boundaries Polygon</div>
+        <div id="ac-input">
+          <input
+            id="pac-input"
+            class="pac-controls"
+            type="text"
+            placeholder="Enter a location name"
+          />
+        </div>
+        <!-- Place details, photo, etc. -->
+        <div id="pac-content"></div>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn0q_XQID1-QN1HeNAE1IwhUbM1S-dH2U&callback=initMap&libraries=places&v=beta"
+      defer
+    ></script>
   </body>
 </html>
